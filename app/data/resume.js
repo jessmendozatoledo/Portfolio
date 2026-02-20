@@ -1,17 +1,18 @@
 export const resumeData = {
-    name: "Allyzza Princess A. Balmoria",
+    name: "JESS M. TOLEDO",
+    avatarUrl: "/Latest_resume.jpg",
     role: "Computer Engineering Student",
     contact: {
-        address: "Imus, Cavite",
-        phone: "09166616213",
-        email: "allyzzaprincess17@gmail.com",
+        address: "General Trias, Cavite",
+        phone: "+639762217754",
+        email: "jessmendozatoledo@gmail.com",
         social: {
-            github: "https://github.com/prim21",
-            linkedin: "https://www.linkedin.com/in/allyzza-princess-balmoria-1a043339a",
+            github: "https://github.com/jessmendozatoledo",
+            linkedin: "https://www.linkedin.com/in/jess-mendoza-toledo-4a8705327",
         },
     },
     summary:
-        "A dedicated Computer Engineering student seeking an On-the-Job Training (OJT) opportunity to enhance technical skills in programming, hardware systems, embedded technologies, and basic IT networking, while contributing to the organization’s projects and operations.",
+        "A dedicated Computer Engineering student seeking an opportunity to enhance technical skills in programming, hardware systems, embedded technologies, and basic IT networking, while contributing to the organization’s projects and operations.",
     education: [
         {
             school: "Philippine Christian University – Dasmariñas",
@@ -20,11 +21,24 @@ export const resumeData = {
             location: "Dasmariñas, Cavite",
         },
         {
-            school: "STI Dasmariñas",
-            degree: "Senior High School",
-            year: "2020-2022",
-            location: "Dasmariñas, Cavite",
-            honors: "With Honors (Grade 11 and Grade 12)",
+            school: "University of Southern Mindanao",
+            degree: "Bachelor of Science in Computer Engineering",
+            year: "2021-2022",
+            location: "Kabacan, North Cotabato",
+        },
+
+        {
+            school: "Ama Computer College-General Santos City Campus",
+            degree: "Bachelor of Science in Computer Engineering",
+            year: "2020-2021",
+            location: "General Santos City, South Cotabato",
+        },
+
+        {
+            school: "Poblacion Polomolok National High School",
+            degree: "Science Technology Engineering and Mathematics (STEM)",
+            year: "2020",
+            location: "Barangay Pagalungan, Polomolok, South Cotabato",
         },
     ],
 
@@ -40,14 +54,13 @@ export const resumeData = {
             ],
         },
         {
-            title: "AWSsemble Stack: Build Serverless, Deploy Fearless",
-            type: "Workshop",
-            year: "January 2026",
-            issuer: "AWS Cloud Club - PCU Cavite",
+            title: "Practicality and Appetency: Factors Affecting the Carrer Choices of HUMSS Students in Poblacion Polomolok National High School",
+            type: "Practical Research II - Presentor",
+            year: "2019-2022",
             description: [
-                "Participated in a hands-on workshop on building serverless applications.",
-                "Learned about AWS Lambda, API Gateway, and DynamoDB.",
-                "Deployed a serverless stack using AWS SAM.",
+                "Conducted a comprehensive study on the factors influencing career choices among HUMSS students.",
+                "Analyzed the impact of socio-economic status, parental influence, and peer pressure on academic decisions.",
+                "Presented findings to school administration to support student guidance programs.",
             ],
         },
     ],
@@ -72,11 +85,11 @@ export const resumeData = {
         },
         {
             category: "Hardware & Electronics",
-            items: ["Basic Circuit design", "Breadboarding"],
+            items: ["Basic Circuit design", "Breadboarding, Electronics Wiring"],
         },
         {
             category: "Programming",
-            items: ["C/C++ (Basic)", "HTML (Basic)", "JavaScript (Basic)"],
+            items: ["Java(Basic)", "CSS(Basic)", "C++(Basic)", "HTML(Basic)", "JavaScript(Basic)"],
         },
         {
             category: "Tools & Software",
@@ -86,16 +99,46 @@ export const resumeData = {
 
     certifications: [
         {
-            title: "Introduction to Cybersecurity",
-            issuer: "Cisco Networking Academy",
-            date: "December 2025",
-            image: "/certs/introduction-to-cybersecurity.png",
+            title: "Cybersecurity Boot Camp",
+            issuer: "SkillLogic",
+            date: "September 18, 2025",
+            image: "/certs/SkillLogic.pdf",
         },
         {
-            title: "Introduction to Modern AI",
-            issuer: "Cisco Networking Academy",
-            date: "December 2025",
-            image: "/certs/introduction-to-modern-ai.png",
+            title: "The Future of Development: Will Vibe Coding Replace Traditional Programming?",
+            issuer: "ICpeP-Singapore Chapter",
+            date: "June 07, 2025",
+            image: "/certs/ICpeP.pdf",
+        },
+        {
+            title: "MicroElectronics: Introduction to Arduino",
+            issuer: "Batangas State University-ARASOF-Nasugbu",
+            date: "November 29, 2021",
+            image: "/certs/MicroElectronics.pdf",
+        },
+        {
+            title: "Data Science Bootcamp",
+            issuer: "DataMites Global Institute for Data Science",
+            date: "September 17, 2024",
+            image: "/certs/Data-Science-Bootcamp.pdf",
+        },
+        {
+            title: "Data Science Bootcamp",
+            issuer: "DataMites Global Institute for Data Science",
+            date: "September 05, 2024",
+            image: "/certs/datasciencebootcamp.pdf",
+        },
+        {
+            title: "Virtual Research Colloquium",
+            issuer: "Philippine Christian University-Reseach and Public Office",
+            date: "January 12, 2024",
+            image: "/certs/research.pdf",
+        },
+        {
+            title: "Wired Foundations: Exploring Networks and Microcontrollers",
+            issuer: "Philippine Christian University-College of Informatics",
+            date: "May 04, 2024",
+            image: "/certs/Certificate for Toledo, Jess.jpg",
         },
     ],
 };

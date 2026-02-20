@@ -1,8 +1,13 @@
+"use client";
 import Section from "./Section";
 import { resumeData } from "../data/resume";
 import Image from "next/image";
+import { useState } from "react";
+import CertificationModal from "./CertificationModal";
 
 export default function Experience() {
+    const [selectedCert, setSelectedCert] = useState(null);
+
     return (
         <Section id="experience" className="bg-zinc-950 relative overflow-hidden">
             {/* Background glow */}
@@ -63,32 +68,77 @@ export default function Experience() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        {resumeData.certifications.map((cert, index) => (
-                            <div key={index} className="group flex items-center gap-5 bg-zinc-900/50 border border-white/5 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)]">
-                                <div className="relative w-20 h-20 flex-shrink-0 bg-zinc-800 rounded-lg overflow-hidden group-hover:ring-2 ring-primary/20 transition-all p-1">
-                                    {cert.image ? (
-                                        <Image
-                                            src={cert.image}
-                                            alt={cert.title}
-                                            fill
-                                            className="object-contain p-1 transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    ) : (
-                                        <div className="flex items-center justify-center w-full h-full text-zinc-600">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                                        </div>
-                                    )}
+                        {resumeData.certifications.map((cert, index) => {
+                            const isPdf = cert.image?.toLowerCase().endsWith('.pdf');
+                            const isImage = cert.image && !isPdf;
+
+                            return (
+                                <div
+                                    key={index}
+                                    onClick={() => setSelectedCert(cert)}
+                                    className="group relative flex items-center gap-5 bg-zinc-900/50 border border-white/5 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)] cursor-pointer overflow-hidden"
+                                >
+                                    {/* Hover Preview Overlay */}
+                                    <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none overflow-hidden bg-white rounded-2xl">
+                                        {isPdf ? (
+                                            <iframe
+                                                src={`${cert.image}#toolbar=0&navpanes=0&scrollbar=0`}
+                                                className="w-full h-full border-none object-cover scale-[1.02]"
+                                                title={cert.title}
+                                                tabIndex="-1"
+                                            />
+                                        ) : (
+                                            <div className="relative w-full h-full">
+                                                <Image
+                                                    src={cert.image}
+                                                    alt={cert.title}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                        )}
+                                        {/* Subtle gradient overlay for text readability if needed, or remove if full cover desired */}
+                                        <div className="absolute inset-0 bg-transparent" />
+                                    </div>
+
+                                    <div className="relative w-20 h-20 flex-shrink-0 bg-zinc-800 rounded-lg overflow-hidden group-hover:ring-2 ring-primary/20 transition-all p-1 z-0">
+                                        {isImage ? (
+                                            <Image
+                                                src={cert.image}
+                                                alt={cert.title}
+                                                fill
+                                                className="object-contain p-1 transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        ) : (
+                                            <div className="flex items-center justify-center w-full h-full text-zinc-500 group-hover:text-primary transition-colors">
+                                                {isPdf ? (
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                                        <polyline points="14 2 14 8 20 8" />
+                                                        <text x="8" y="20" fontSize="6" fill="currentColor" fontWeight="bold">PDF</text>
+                                                    </svg>
+                                                ) : (
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="z-0">
+                                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors leading-tight">{cert.title}</h3>
+                                        <p className="text-zinc-400 text-sm mb-1">{cert.issuer}</p>
+                                        <p className="text-zinc-600 text-xs font-mono">{cert.date}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors leading-tight">{cert.title}</h3>
-                                    <p className="text-zinc-400 text-sm mb-1">{cert.issuer}</p>
-                                    <p className="text-zinc-600 text-xs font-mono">{cert.date}</p>
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </div>
+            <CertificationModal
+                isOpen={!!selectedCert}
+                onClose={() => setSelectedCert(null)}
+                cert={selectedCert}
+            />
         </Section>
     );
 }

@@ -20,7 +20,7 @@ export default function Hero() {
                     </p>
                     <h1 className="text-3xl md:text-5xl text-white font-light">
                         I'm <span className="text-primary font-[family-name:var(--font-oswald)] font-bold uppercase tracking-wide">
-                            ALLYZZA
+                            JESS
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-zinc-300 font-light">
@@ -80,8 +80,8 @@ export default function Hero() {
                         >
                             <div className="absolute inset-0 bg-primary/10" />
                             <Image
-                                src="/resumee.png"
-                                alt="Allyzza profile photo"
+                                src={resumeData.avatarUrl}
+                                alt={`${resumeData.name} profile photo`}
                                 fill
                                 className="object-cover"
                                 priority
