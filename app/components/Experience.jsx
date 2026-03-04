@@ -40,7 +40,7 @@ export default function Experience() {
                                     <span className="inline-block text-zinc-500 text-sm font-medium whitespace-nowrap align-middle">
                                         {exp.year}
                                     </span>
-                                    <p className="text-zinc-400 font-medium text-sm mt-1">{exp.issuer || "Academic Project"}</p>
+                                    <p className="text-zinc-400 font-medium text-sm mt-1">{exp.category}</p>
                                 </div>
 
                                 <ul className="space-y-2">

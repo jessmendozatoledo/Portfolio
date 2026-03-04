@@ -46,6 +46,7 @@ export const resumeData = {
         {
             title: "Smart Feeder with Monitoring System Using Raspberry Pi and ESP32 for Rescued Dogs at Tails of Freedom Animal Haven",
             type: "Thesis Project",
+            category: "Academic Project",
             year: "2024 - 2025",
             description: [
                 "Developed an automated dog feeding system using ESP32 (C/C++) and Raspberry Pi (Python).",
@@ -56,11 +57,13 @@ export const resumeData = {
         {
             title: "Practicality and Appetency: Factors Affecting the Carrer Choices of HUMSS Students in Poblacion Polomolok National High School",
             type: "Practical Research II - Presentor",
+            category: "Academic Project / GENTEFL Presentor",
             year: "2019-2022",
             description: [
                 "Conducted a comprehensive study on the factors influencing career choices among HUMSS students.",
                 "Analyzed the impact of socio-economic status, parental influence, and peer pressure on academic decisions.",
                 "Presented findings to school administration to support student guidance programs.",
+                "Presentor of the research project in GENTEFL International Conference 2022 in Da Nang, Vietnam."
             ],
         },
     ],
@@ -93,7 +96,7 @@ export const resumeData = {
         },
         {
             category: "Tools & Software",
-            items: ["Microsoft Office Suite", "Cisco Packet Tracer", "VS Code"],
+            items: ["Microsoft Office Suite", "Cisco Packet Tracer", "VS Code", "Antigravity",]
         },
     ],
 
