@@ -9,6 +9,9 @@ export const resumeData = {
         social: {
             github: "https://github.com/jessmendozatoledo",
             linkedin: "https://www.linkedin.com/in/jess-mendoza-toledo-4a8705327",
+            facebook: "https://www.facebook.com/jmtoled0",
+            instagram: "https://www.instagram.com/sylphhhhhhhh?igsh=YnF5ODcwODJpbTA=",
+            tiktok: "https://www.tiktok.com/@id.861745612?_r=1&_t=ZS-94gGMmkhBir",
         },
     },
     summary:
