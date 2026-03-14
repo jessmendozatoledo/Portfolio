@@ -1,0 +1,151 @@
+export const resumeData = {
+    name: "JESS M. TOLEDO",
+    avatarUrl: "/Latest_resume.jpg",
+    role: "Computer Engineering Student",
+    contact: {
+        address: "General Trias, Cavite",
+        phone: "+639762217754",
+        email: "jessmendozatoledo@gmail.com",
+        social: {
+            github: "https://github.com/jessmendozatoledo",
+            linkedin: "https://www.linkedin.com/in/jess-mendoza-toledo-4a8705327",
+        },
+    },
+    summary:
+        "A dedicated Computer Engineering student seeking an opportunity to enhance technical skills in programming, hardware systems, embedded technologies, and basic IT networking, while contributing to the organization's projects and operations.",
+    education: [
+        {
+            school: "Philippine Christian University – Dasmariñas",
+            degree: "Bachelor of Science in Computer Engineering",
+            year: "Expected June 2026",
+            location: "Dasmariñas, Cavite",
+            logo: "/School/pcu.png",
+        },
+        {
+            school: "University of Southern Mindanao",
+            degree: "Bachelor of Science in Computer Engineering",
+            year: "2021-2022",
+            location: "Kabacan, North Cotabato",
+            logo: "/School/usm.png",
+        },
+
+        {
+            school: "Ama Computer College-General Santos City Campus",
+            degree: "Bachelor of Science in Computer Engineering",
+            year: "2020-2021",
+            location: "General Santos City, South Cotabato",
+            logo: "/School/AMA.jpg",
+        },
+
+        {
+            school: "Poblacion Polomolok National High School",
+            degree: "Science Technology Engineering and Mathematics (STEM)",
+            year: "2020",
+            location: "Barangay Pagalungan, Polomolok, South Cotabato",
+            logo: "/School/ppnhs.png",
+        },
+    ],
+
+    experience: [
+        {
+            title: "Smart Feeder with Monitoring System Using Raspberry Pi and ESP32 for Rescued Dogs at Tails of Freedom Animal Haven",
+            type: "Thesis Project",
+            category: "Academic Project",
+            year: "2024 - 2025",
+            description: [
+                "Developed an automated dog feeding system using ESP32 (C/C++) and Raspberry Pi (Python).",
+                "Implemented real-time food level monitoring and scheduled dispensing.",
+                "Created a local dashboard for system status and control.",
+            ],
+        },
+        {
+            title: "Practicality and Appetency: Factors Affecting the Carrer Choices of HUMSS Students in Poblacion Polomolok National High School",
+            type: "Practical Research II - Presentor",
+            category: "Academic Project / GENTEFL Presentor",
+            year: "2019-2022",
+            description: [
+                "Conducted a comprehensive study on the factors influencing career choices among HUMSS students.",
+                "Analyzed the impact of socio-economic status, parental influence, and peer pressure on academic decisions.",
+                "Presented findings to school administration to support student guidance programs.",
+                "Presentor of the research project in GENTEFL International Conference 2022 in Da Nang, Vietnam."
+            ],
+        },
+    ],
+
+    skills: [
+        {
+            category: "Networking",
+            items: [
+                "Manual IP address configuration",
+                "Basic device-to-device communication",
+                "Cisco Packet Tracer simulations",
+            ],
+        },
+        {
+            category: "Cloud & Virtualization",
+            items: [
+                "Oracle VirtualBox",
+                "Kali Linux Configuration",
+                "Windows Server & Client VMs",
+                "Basic Virtual Networking",
+            ],
+        },
+        {
+            category: "Hardware & Electronics",
+            items: ["Basic Circuit design", "Breadboarding, Electronics Wiring"],
+        },
+        {
+            category: "Programming",
+            items: ["Java(Basic)", "CSS(Basic)", "C++(Basic)", "HTML(Basic)", "JavaScript(Basic)"],
+        },
+        {
+            category: "Tools & Software",
+            items: ["Microsoft Office Suite", "Cisco Packet Tracer", "VS Code", "Antigravity",]
+        },
+    ],
+
+    certifications: [
+        {
+            title: "Cybersecurity Boot Camp",
+            issuer: "SkillLogic",
+            date: "September 18, 2025",
+            image: "/certs/SkillLogic.pdf",
+        },
+        {
+            title: "The Future of Development: Will Vibe Coding Replace Traditional Programming?",
+            issuer: "ICpeP-Singapore Chapter",
+            date: "June 07, 2025",
+            image: "/certs/ICpeP.pdf",
+        },
+        {
+            title: "MicroElectronics: Introduction to Arduino",
+            issuer: "Batangas State University-ARASOF-Nasugbu",
+            date: "November 29, 2021",
+            image: "/certs/MicroElectronics.pdf",
+        },
+        {
+            title: "Data Science Bootcamp",
+            issuer: "DataMites Global Institute for Data Science",
+            date: "September 17, 2024",
+            image: "/certs/Data-Science-Bootcamp.pdf",
+        },
+        {
+            title: "Data Science Bootcamp",
+            issuer: "DataMites Global Institute for Data Science",
+            date: "September 05, 2024",
+            image: "/certs/datasciencebootcamp.pdf",
+        },
+        {
+            title: "Virtual Research Colloquium",
+            issuer: "Philippine Christian University-Reseach and Public Office",
+            date: "January 12, 2024",
+            image: "/certs/research.pdf",
+        },
+        {
+            title: "Wired Foundations: Exploring Networks and Microcontrollers",
+            issuer: "Philippine Christian University-College of Informatics",
+            date: "May 04, 2024",
+            image: "/certs/Certificate for Toledo, Jess.jpg",
+        },
+    ],
+};
