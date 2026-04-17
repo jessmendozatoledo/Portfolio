@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+import LampshadeToggle from "./LampshadeToggle";
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
@@ -29,21 +31,25 @@ export default function Navbar() {
         >
             <div className="max-w-4xl mx-auto px-6 flex justify-between items-center">
                 <Link href="/" className="text-2xl font-bold text-white">
-                    JE<span className="text-primary">SS</span>.
+                    JE<span className="text-primary">SS</span>!
                 </Link>
-                <ul className="hidden md:flex space-x-8">
-                    {navLinks.map((link) => (
-                        <li key={link.name}>
-                            <Link
-                                href={link.href}
-                                className="text-zinc-400 hover:text-primary transition-colors uppercase text-sm tracking-wider font-medium"
-                            >
-                                {link.name}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-                {/* Mobile menu button could go here */}
+
+                <div className="flex items-center gap-8">
+                    <ul className="hidden md:flex space-x-8">
+                        {navLinks.map((link) => (
+                            <li key={link.name}>
+                                <Link
+                                    href={link.href}
+                                    className="text-zinc-400 hover:text-primary transition-colors uppercase text-sm tracking-wider font-medium"
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <LampshadeToggle />
+                </div>
             </div>
         </nav>
     );

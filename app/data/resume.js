@@ -9,13 +9,11 @@ export const resumeData = {
         social: {
             github: "https://github.com/jessmendozatoledo",
             linkedin: "https://www.linkedin.com/in/jess-mendoza-toledo-4a8705327",
-            facebook: "https://www.facebook.com/jmtoled0",
-            instagram: "https://www.instagram.com/sylphhhhhhhh?igsh=YnF5ODcwODJpbTA=",
-            tiktok: "https://www.tiktok.com/@id.861745612?_r=1&_t=ZS-94gGMmkhBir",
+
         },
     },
     summary:
-        "A dedicated Computer Engineering student seeking an opportunity to enhance technical skills in programming, hardware systems, embedded technologies, and basic IT networking, while contributing to the organization's projects and operations.",
+        "A dedicated Computer Engineering student seeking an opportunity to enhance technical skills in programming, hardware systems, embedded technologies, and networking, while contributing to the organization's projects and operations.",
     education: [
         {
             school: "Philippine Christian University – Dasmariñas",
@@ -33,16 +31,8 @@ export const resumeData = {
         },
 
         {
-            school: "Ama Computer College-General Santos City Campus",
-            degree: "Bachelor of Science in Computer Engineering",
-            year: "2020-2021",
-            location: "General Santos City, South Cotabato",
-            logo: "/School/AMA.jpg",
-        },
-
-        {
-            school: "Poblacion Polomolok National High School",
-            degree: "Science Technology Engineering and Mathematics (STEM)",
+            school: "Poblacion Polomolok National High School-Senior High School",
+            Strand: "Science Technology Engineering and Mathematics (STEM)",
             year: "2020",
             location: "Barangay Pagalungan, Polomolok, South Cotabato",
             logo: "/School/ppnhs.png",

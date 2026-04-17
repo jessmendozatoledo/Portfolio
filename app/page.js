@@ -5,7 +5,7 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 export default function Home() {
   return (
-    <main className="bg-zinc-950 min-h-screen">
+    <main className="min-h-screen relative">
       <Navbar />
       <Hero />
       <Education />
