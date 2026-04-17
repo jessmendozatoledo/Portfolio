@@ -31,7 +31,7 @@ export const resumeData = {
         },
 
         {
-            school: "Poblacion Polomolok National High School - Senior High School",
+            school: "Poblacion Polomolok National High School - SHS ",
             degree: "Science Technology Engineering and Mathematics (STEM)",
             year: "2020",
             location: "Barangay Pagalungan, Polomolok, South Cotabato",
