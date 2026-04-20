@@ -60,6 +60,11 @@ html, body, section, div, h1, h2, h3, p, span, a, svg, button {
   color: #18181b !important;
 }
 
+.light-mode .bg-zinc-400,
+.light-mode span.bg-zinc-400 {
+  background-color: #27272a !important;
+}
+
 .light-mode .text-white,
 .light-mode h1.text-white,
 .light-mode h2.text-white,

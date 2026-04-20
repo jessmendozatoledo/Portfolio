@@ -6,15 +6,15 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="min-h-screen flex items-center justify-center relative overflow-hidden bg-zinc-950 pt-20"
+            className="min-h-screen flex items-center justify-center relative overflow-hidden bg-zinc-950 pt-20 px-4"
         >
             {/* Background glow orbs */}
             <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px]" />
             <div className="absolute bottom-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px]" />
 
-            <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="w-full max-w-4xl mx-auto px-2 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
                 {/* Left — text */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center md:text-left order-2 md:order-1">
                     <p className="text-primary font-medium tracking-wide text-sm md:text-base">
                         Hello, welcome
                     </p>
@@ -26,14 +26,14 @@ export default function Hero() {
                     <p className="text-lg md:text-xl text-zinc-300 font-light">
                         {resumeData.role}
                     </p>
-                    <p className="text-zinc-500 max-w-lg leading-relaxed text-justify">
+                    <p className="text-zinc-500 max-w-lg leading-relaxed text-justify mx-auto md:mx-0">
                         {resumeData.summary}
                     </p>
 
                     {/* CTAs — clear primary / secondary hierarchy */}
 
                     {/* Social Links */}
-                    <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
                         {/* GitHub */}
                         <a
                             href={resumeData.contact.social.github}
@@ -59,26 +59,26 @@ export default function Hero() {
                 </div>
 
                 {/* Right — photo blob & animation */}
-                <div className="relative flex justify-center items-center scale-75 md:scale-90">
-                    {/* Orbital System */}
-                    <div className="relative w-[400px] h-[400px] flex items-center justify-center">
+                <div className="relative flex justify-center items-center order-1 md:order-2">
+                    {/* Orbital System — fully responsive */}
+                    <div className="relative w-[min(85vw,360px)] h-[min(85vw,360px)] flex items-center justify-center">
                         {/* Background Gradient Blob */}
                         <div className="absolute inset-0 bg-primary/20 rounded-full blur-[60px] opacity-40 animate-pulse"
                             style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
                         />
 
                         {/* Orbits */}
-                        <div className="absolute w-[350px] h-[350px] border border-primary/20 rounded-[45%] animate-spin-slow">
+                        <div className="absolute w-[88%] h-[88%] border border-primary/20 rounded-[45%] animate-spin-slow">
                             <div className="absolute top-1/2 -right-1 w-2.5 h-2.5 bg-primary rounded-full shadow-[0_0_12px_rgba(149,213,178,0.8)]" />
                         </div>
 
-                        <div className="absolute w-[280px] h-[280px] border border-primary/20 rounded-[35%] animate-reverse-spin">
+                        <div className="absolute w-[70%] h-[70%] border border-primary/20 rounded-[35%] animate-reverse-spin">
                             <div className="absolute bottom-4 left-1/4 w-2.5 h-2.5 bg-primary rounded-full shadow-[0_0_12px_rgba(149,213,178,0.8)]" />
                         </div>
 
                         {/* Profile Picture Container */}
                         <div
-                            className="relative w-60 h-60 md:w-72 h-72 bg-zinc-900 border-2 border-primary/30 flex items-center justify-center z-20 overflow-hidden shadow-2xl shadow-primary/20 hover:scale-105 transition-transform duration-500 ease-out"
+                            className="relative w-[52%] h-[52%] bg-zinc-900 border-2 border-primary/30 flex items-center justify-center z-20 overflow-hidden shadow-2xl shadow-primary/20 hover:scale-105 transition-transform duration-500 ease-out"
                             style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
                         >
                             <div className="absolute inset-0 bg-primary/10" />
