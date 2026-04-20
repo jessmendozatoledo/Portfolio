@@ -13,13 +13,15 @@ export default function LampshadeToggle() {
     };
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMove = (e) => {
             if (!isDragging) return;
-            const diff = Math.max(0, Math.min(30, e.clientY - startY));
+            // Handle both touch and mouse events
+            const clientY = e.touches && e.touches.length > 0 ? e.touches[0].clientY : e.clientY;
+            const diff = Math.max(0, Math.min(30, clientY - startY));
             setDragY(diff);
         };
 
-        const handleMouseUp = () => {
+        const handleUp = () => {
             if (!isDragging) return;
             if (dragY > 15) {
                 setIsLight(!isLight);
@@ -29,13 +31,17 @@ export default function LampshadeToggle() {
         };
 
         if (isDragging) {
-            window.addEventListener("mousemove", handleMouseMove);
-            window.addEventListener("mouseup", handleMouseUp);
+            window.addEventListener("mousemove", handleMove);
+            window.addEventListener("mouseup", handleUp);
+            window.addEventListener("touchmove", handleMove, { passive: false });
+            window.addEventListener("touchend", handleUp);
         }
 
         return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-            window.removeEventListener("mouseup", handleMouseUp);
+            window.removeEventListener("mousemove", handleMove);
+            window.removeEventListener("mouseup", handleUp);
+            window.removeEventListener("touchmove", handleMove);
+            window.removeEventListener("touchend", handleUp);
         };
     }, [isDragging, startY, dragY, isLight]);
 

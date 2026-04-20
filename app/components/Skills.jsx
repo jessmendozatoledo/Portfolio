@@ -15,7 +15,7 @@ export default function Skills() {
                 <div className="w-20 h-1 bg-primary rounded-full"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl mx-auto relative z-10">
                 {resumeData.skills.map((skillGroup, index) => (
                     <div
                         key={index}
