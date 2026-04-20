@@ -79,26 +79,25 @@ export default function Experience() {
                                     className="group relative flex items-center gap-5 bg-zinc-900/50 border border-white/5 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)] cursor-pointer overflow-hidden"
                                 >
                                     {/* Hover Preview Overlay */}
-                                    <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none overflow-hidden bg-white rounded-2xl">
-                                        {isPdf ? (
-                                            <iframe
-                                                src={`${cert.image}#toolbar=0&navpanes=0&scrollbar=0`}
-                                                className="w-full h-full border-none object-cover scale-[1.02]"
-                                                title={cert.title}
-                                                tabIndex="-1"
-                                            />
-                                        ) : (
-                                            <div className="relative w-full h-full">
+                                    <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-zinc-950/95 backdrop-blur-sm rounded-2xl p-4 flex items-center justify-center">
+                                        <div className="relative w-full h-full rounded-lg overflow-hidden">
+                                            {isImage && (
                                                 <Image
                                                     src={cert.image}
                                                     alt={cert.title}
                                                     fill
-                                                    className="object-cover"
+                                                    className="object-contain"
                                                 />
-                                            </div>
-                                        )}
-                                        {/* Subtle gradient overlay for text readability if needed, or remove if full cover desired */}
-                                        <div className="absolute inset-0 bg-transparent" />
+                                            )}
+                                            {isPdf && (
+                                                <iframe
+                                                    src={`${cert.image}#toolbar=0&navpanes=0&scrollbar=0`}
+                                                    className="w-full h-full border-none object-contain"
+                                                    title={cert.title}
+                                                    tabIndex="-1"
+                                                />
+                                            )}
+                                        </div>
                                     </div>
 
                                     <div className="relative w-20 h-20 flex-shrink-0 bg-zinc-800 rounded-lg overflow-hidden group-hover:ring-2 ring-primary/20 transition-all p-1 z-0">
