@@ -5,12 +5,12 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
-    const [isLight, setIsLight] = useState(false);
+    const [isLight, setIsLight] = useState(true);
     const [isTransitioning, setIsTransitioning] = useState(false);
     
     const puttingRef = useRef(null);
     const removingRef = useRef(null);
-    const prevLight = useRef(false);
+    const prevLight = useRef(true);
 
     // Sync theme state with document class
     useEffect(() => {

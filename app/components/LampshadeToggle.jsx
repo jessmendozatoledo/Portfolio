@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export default function LampshadeToggle() {
-    const [isLight, setIsLight] = useState(false);
+    const [isLight, setIsLight] = useState(true);
     const [dragY, setDragY] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [startY, setStartY] = useState(0);
