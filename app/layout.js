@@ -22,12 +22,15 @@ export const metadata = {
   description: "Computer Engineering Student | Portfolio",
 };
 
+import ThemeTransitionHandler from "./components/ThemeTransitionHandler";
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="light-mode no-transitions">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased bg-zinc-950`}
+        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
       >
+        <ThemeTransitionHandler />
         {children}
       </body>
     </html>
