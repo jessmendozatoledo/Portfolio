@@ -164,5 +164,11 @@ export const resumeData = {
             date: "April 17, 2026",
             image: "/certs/IT_Infrastructure_Design_and_Management_april.17.2026.png",
         },
+        {
+            title: "On-The-Job Training",
+            issuer: "Inspire Holdoings Incorporated",
+            date: "February 2, - March 30, 2026",
+            image: "/certs/COC.jpg",
+        },
     ],
 };
