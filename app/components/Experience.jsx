@@ -61,7 +61,7 @@ export default function Experience() {
                 </div>
 
                 {/* Certifications Section */}
-                <div>
+                <div id="certifications" className="scroll-mt-20">
                     <div className="flex flex-col items-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Certifications</h2>
                         <div className="w-20 h-1 bg-primary rounded-full"></div>
