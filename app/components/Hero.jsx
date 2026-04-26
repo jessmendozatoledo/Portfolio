@@ -7,7 +7,8 @@ import { useState, useEffect, useRef } from "react";
 export default function Hero() {
     const [isLight, setIsLight] = useState(true);
     const [isTransitioning, setIsTransitioning] = useState(false);
-    
+    const [hoverEnabled, setHoverEnabled] = useState(false); // Only unlocks after first dark→light toggle
+
     const puttingRef = useRef(null);
     const removingRef = useRef(null);
     const prevLight = useRef(true);
@@ -35,13 +36,13 @@ export default function Hero() {
                 // Transitioning to Light: Play removing video
                 if (removingRef.current) {
                     removingRef.current.currentTime = 0;
-                    removingRef.current.play().catch(() => {});
+                    removingRef.current.play().catch(() => { });
                 }
             } else {
                 // Transitioning to Dark: Play putting video
                 if (puttingRef.current) {
                     puttingRef.current.currentTime = 0;
-                    puttingRef.current.play().catch(() => {});
+                    puttingRef.current.play().catch(() => { });
                 }
             }
             prevLight.current = isLight;
@@ -50,6 +51,10 @@ export default function Hero() {
 
     const handleVideoEnd = () => {
         setIsTransitioning(false);
+        // Unlock the hover shock effect only after the dark→light transition animation finishes
+        if (isLight) {
+            setHoverEnabled(true);
+        }
     };
 
     return (
@@ -123,7 +128,7 @@ export default function Hero() {
 
                         {/* Profile Picture Container */}
                         <div
-                            className="relative w-[52%] h-[52%] bg-zinc-900 border-2 border-primary/30 flex items-center justify-center z-20 overflow-hidden shadow-2xl shadow-primary/20 hover:scale-105 transition-all duration-500 ease-out light-mode:bg-zinc-200"
+                            className="group relative w-[52%] h-[52%] bg-zinc-900 border-2 border-primary/30 flex items-center justify-center z-20 overflow-hidden shadow-2xl shadow-primary/20 hover:scale-105 transition-all duration-500 ease-out light-mode:bg-zinc-200"
                             style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
                         >
                             {/* Layer 1: Base Image (No Eyeglasses) */}
@@ -154,7 +159,17 @@ export default function Hero() {
                                 onEnded={handleVideoEnd}
                                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${(isLight && isTransitioning) ? 'opacity-100' : 'opacity-0'}`}
                             />
-                            
+
+                            {/* Layer 4: Shock Image (Hover - only after first dark→light toggle, stays in light mode) */}
+                            {hoverEnabled && isLight && !isTransitioning && (
+                                <Image
+                                    src="/shock.png"
+                                    alt="Surprised"
+                                    fill
+                                    className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30"
+                                />
+                            )}
+
                             <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
                         </div>
                     </div>
