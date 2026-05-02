@@ -182,11 +182,5 @@ export const resumeData = {
             date: "February 2, - March 30, 2026",
             image: "/certs/COC.jpg",
         },
-        {
-            title: "New Certification Name",
-            issuer: "Issuer Name",
-            date: "Month Day, Year",
-            image: "/certs/placeholder.jpg",
-        },
     ],
 };
