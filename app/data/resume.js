@@ -44,6 +44,7 @@ export const resumeData = {
             title: "Smart Feeder with Monitoring System Using Raspberry Pi and ESP32 for Rescued Dogs at Tails of Freedom Animal Haven",
             type: "Thesis Project",
             category: "Academic Project",
+            location: "Philippine Christian University - Dasmariñas, Cavite",
             year: "2024 - 2025",
             description: [
                 "Developed an automated dog feeding system using ESP32 (C/C++) and Raspberry Pi (Python).",
@@ -54,7 +55,8 @@ export const resumeData = {
         {
             title: "Practicality and Appetency: Factors Affecting the Carrer Choices of HUMSS Students in Poblacion Polomolok National High School",
             type: "Practical Research II - Presentor",
-            category: "Academic Project / GENTEFL Presentor",
+            category: "Academic Project / GENTEFL Presentor -",
+            location: "Da Nang, Vietnam",
             year: "2019-2022",
             description: [
                 "Conducted a comprehensive study on the factors influencing career choices among HUMSS students.",
@@ -66,10 +68,11 @@ export const resumeData = {
         {
             title: "On-The-Job Training",
             type: "Training",
-            category: "Corporate Experience",
+            category: "Inspire Holdings Inc. - Corporate Company",
+            location: "6th Floor, Alliance Global Building, BGC, Taguig City",
             year: "February 2 - March 30, 2026",
             description: [
-                "Enhance the frontend design of the company's website",
+                "Enhance the frontend design of the Deskhrx website",
                 "Design the UI/UX in Figma",
                 "Testing the website for responsiveness and compatibility issues.",
                 "Performing quality assurance to ensure the website meets design and functional requirements."
@@ -101,7 +104,7 @@ export const resumeData = {
         },
         {
             category: "Programming",
-            items: ["Java(Basic)", "CSS(Basic)", "C++(Basic)", "HTML(Basic)", "JavaScript(Basic)"],
+            items: ["Java(Basic)", "CSS(Basic)", "C++(Basic)", "HTML(Basic)", "JavaScript(Basic)", "Tailwind css(Basic)"],
         },
         {
             category: "Tools & Software",
