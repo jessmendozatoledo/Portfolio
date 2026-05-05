@@ -11,7 +11,6 @@ export default function Experience() {
     return (
         <Section id="experience" className="bg-zinc-950 relative overflow-hidden">
             {/* Background glow */}
-            {/* Background glow */}
             <div className="absolute top-40 right-0 w-80 h-80 bg-primary/15 rounded-full blur-[100px]" />
             <div className="absolute bottom-40 left-0 w-80 h-80 bg-primary/15 rounded-full blur-[100px]" />
             {/* Extra glow for Certifications */}
@@ -27,7 +26,7 @@ export default function Experience() {
 
                     <div className="grid gap-6">
                         {resumeData.experience.map((exp, index) => (
-                            <div key={index} className="group relative bg-zinc-900/50 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(149,213,178,0.1)]">
+                            <div key={index} className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(149,213,178,0.1)]">
                                 <div className="mb-4">
                                     <h3 className="inline text-lg md:text-xl font-bold text-white leading-tight mr-3">
                                         {exp.title}
@@ -41,6 +40,14 @@ export default function Experience() {
                                         {exp.year}
                                     </span>
                                     <p className="text-zinc-400 font-medium text-sm mt-1">{exp.category}</p>
+                                    {exp.location && (
+                                        <p className="flex items-center gap-1 text-zinc-500 text-xs mt-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                            </svg>
+                                            {exp.location}
+                                        </p>
+                                    )}
                                 </div>
 
                                 <ul className="space-y-2">
@@ -76,7 +83,7 @@ export default function Experience() {
                                 <div
                                     key={index}
                                     onClick={() => setSelectedCert(cert)}
-                                    className="group relative flex items-center gap-5 bg-zinc-900/50 border border-white/5 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)] cursor-pointer overflow-hidden"
+                                    className="group relative flex items-center gap-5 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)] cursor-pointer overflow-hidden"
                                 >
                                     {/* Hover Preview Overlay */}
                                     <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-zinc-950/95 backdrop-blur-sm rounded-2xl p-4 flex items-center justify-center">

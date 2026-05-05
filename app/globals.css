@@ -52,9 +52,14 @@ html, body, section, div, h1, h2, h3, p, span, a, svg, button {
 
 .light-mode .bg-zinc-900,
 .light-mode div.bg-zinc-900,
-.light-mode .bg-zinc-900\/50,
 .light-mode nav.bg-zinc-950\/80 {
   background-color: #f4f4f5 !important;
+}
+
+/* Experience & content cards — white with shadow so they're visible on light background */
+.light-mode .bg-zinc-900\/50 {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
 }
 
 .light-mode .bg-zinc-800,
@@ -85,11 +90,11 @@ html, body, section, div, h1, h2, h3, p, span, a, svg, button {
 .light-mode .text-zinc-200,
 .light-mode .text-zinc-300,
 .light-mode .text-zinc-400 {
-  color: #27272a !important;
+  color: #18181b !important;
 }
 
 .light-mode .text-zinc-500 {
-  color: #52525b !important;
+  color: #3f3f46 !important;
 }
 
 .light-mode .border-zinc-800,
@@ -107,9 +112,9 @@ html, body, section, div, h1, h2, h3, p, span, a, svg, button {
 }
 
 /* Adjust Glow Orbs for Light Mode */
-.light-mode .bg-primary\/20,
-.light-mode .bg-primary\/15,
-.light-mode .bg-primary\/10 {
+.light-mode .absolute.bg-primary\/20,
+.light-mode .absolute.bg-primary\/15,
+.light-mode .absolute.bg-primary\/10 {
   background-color: var(--primary) !important;
   opacity: 0.15 !important;
   filter: blur(120px) !important;
