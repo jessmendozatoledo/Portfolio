@@ -19,7 +19,18 @@
 }
 
 /* Smooth Transitions for Theme Switching */
-html, body, section, div, h1, h2, h3, p, span, a, svg, button {
+html,
+body,
+section,
+div,
+h1,
+h2,
+h3,
+p,
+span,
+a,
+svg,
+button {
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
 }
 

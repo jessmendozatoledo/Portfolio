@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import VisitorCounter from "./VisitorCounter";
 
 export default function LampshadeToggle() {
     const [isLight, setIsLight] = useState(true);
@@ -58,6 +59,7 @@ export default function LampshadeToggle() {
             className="relative group transition-transform" 
             title={isLight ? "Pull to toggle light" : "Pull to toggle dark"}
         >
+            <VisitorCounter />
             <div className="relative w-14 h-16 flex items-center justify-center">
                 {/* SVG Lampshade */}
                 <svg
