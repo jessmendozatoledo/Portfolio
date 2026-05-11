@@ -38,9 +38,13 @@ export default function CertificationModal({ isOpen, onClose, cert }) {
                     </div>
                     <button
                         onClick={onClose}
-                        className="p-2 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors"
+                        className="p-2 rounded-lg hover:bg-primary/10 text-zinc-400 hover:text-primary transition-all duration-200 group"
+                        aria-label="Close modal"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 18 18" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:rotate-90 transition-transform duration-300">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                 </div>
 

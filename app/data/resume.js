@@ -4,7 +4,7 @@ export const resumeData = {
     role: "Computer Engineer",
     contact: {
         address: "General Trias, Cavite",
-        phone: "+639762217754",
+        phone: "+639-7622-17754",
         email: "jessmendozatoledo@gmail.com",
         social: {
             github: "https://github.com/jessmendozatoledo",
@@ -104,21 +104,19 @@ export const resumeData = {
         },
         {
             category: "Programming",
-            items: ["Java(Basic)", "CSS(Basic)", "C++(Basic)", "HTML(Basic)", "JavaScript(Basic)", "Tailwind css(Basic)"],
+            items: ["Java(Basic)", "CSS(Basic)", "C++(Basic)", "HTML(Basic)", "JavaScript(Basic)", "Tailwind css(Basic)", "Python(Basic)"],
         },
         {
             category: "Tools & Software",
-            items: ["Microsoft Office Suite", "Cisco Packet Tracer", "VS Code", "Antigravity",]
+            items: ["Microsoft Office Suite", "Cisco Packet Tracer", "VS Code", "Antigravity", "Vercel"],
+        },
+        {
+            category: "Design & UI/UX",
+            items: ["UI/UX Design", "Figma", "Wireframing", "Prototyping", "User Interface Design", "App Mockup Design"],
         },
     ],
 
     certifications: [
-        {
-            title: "Cybersecurity Boot Camp",
-            issuer: "SkillLogic",
-            date: "September 18, 2024",
-            image: "/certs/SkillLogic.jpg",
-        },
         {
             title: "The Future of Development: Will Vibe Coding Replace Traditional Programming?",
             issuer: "ICpeP-Singapore Chapter",
@@ -130,6 +128,30 @@ export const resumeData = {
             issuer: "Batangas State University-ARASOF-Nasugbu",
             date: "November 29, 2021",
             image: "/certs/MicroElectronics.jpg",
+        },
+        {
+            title: "Wired Foundations: Exploring Networks and Microcontrollers",
+            issuer: "Philippine Christian University-College of Informatics",
+            date: "May 04, 2024",
+            image: "/certs/Certificate for Toledo, Jess.jpg",
+        },
+        {
+            title: "Linux For Cybersecurity",
+            issuer: "BlackStride Cyber",
+            date: "March 13, 2026",
+            image: "/certs/Black_stride. march.13.2026-1.png",
+        },
+        {
+            title: "On-The-Job Training",
+            issuer: "Inspire Holdoings Incorporated",
+            date: "February 2, - March 30, 2026",
+            image: "/certs/COC.jpg",
+        },
+        {
+            title: "Cybersecurity Boot Camp",
+            issuer: "SkillLogic",
+            date: "September 18, 2024",
+            image: "/certs/SkillLogic.jpg",
         },
         {
             title: "Data Science Bootcamp",
@@ -150,22 +172,10 @@ export const resumeData = {
             image: "/certs/research.jpg",
         },
         {
-            title: "Wired Foundations: Exploring Networks and Microcontrollers",
-            issuer: "Philippine Christian University-College of Informatics",
-            date: "May 04, 2024",
-            image: "/certs/Certificate for Toledo, Jess.jpg",
-        },
-        {
             title: "Anti Virus and Firewall Protection",
             issuer: "Ethel Programming Computer Programming Services",
             date: "April 15, 2024",
             image: "/certs/Anti_virus_firewall_protection_april.15.2024.png",
-        },
-        {
-            title: "Linux For Cybersecurity",
-            issuer: "BlackStride Cyber",
-            date: "March 13, 2026",
-            image: "/certs/Black_stride. march.13.2026-1.png",
         },
         {
             title: "Computer Tools in Computer Services",
@@ -178,12 +188,6 @@ export const resumeData = {
             issuer: "Ethel Programming Computer Programming Services",
             date: "April 17, 2026",
             image: "/certs/IT_Infrastructure_Design_and_Management_april.17.2026.png",
-        },
-        {
-            title: "On-The-Job Training",
-            issuer: "Inspire Holdoings Incorporated",
-            date: "February 2, - March 30, 2026",
-            image: "/certs/COC.jpg",
         },
     ],
 };
