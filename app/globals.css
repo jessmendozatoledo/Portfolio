@@ -4,11 +4,8 @@
   --background: #f4f4f5;
   --foreground: #18181b;
   --primary: #38bdf8;
-  /* Light Sky Blue */
-  /* Fresh Green */
   --primary-foreground: #ffffff;
   --secondary: #e4e4e7;
-  /* zinc-200 */
 }
 
 @theme inline {
@@ -40,106 +37,173 @@ button {
   transition: none !important;
 }
 
-/* Light Mode Overrides */
-.light-mode {
+/* Light Mode Overrides - Using higher specificity with html.light-mode */
+html.light-mode {
   --background: #fdfdfd;
   --foreground: #09090b;
   --primary: #0284c7;
   --secondary: #f4f4f5;
 }
 
-.light-mode body {
+html.light-mode body {
   background: #fdfdfd;
   color: #09090b;
 }
 
-/* Force override common dark utility classes when in light mode */
-.light-mode .bg-zinc-950,
-.light-mode section.bg-zinc-950,
-.light-mode main.bg-zinc-950 {
+/* Force text colors in light mode */
+html.light-mode {
+
+  /* Override all common text color classes */
+  & .text-white,
+  & .text-zinc-100,
+  & .text-zinc-200,
+  & .text-zinc-300,
+  & .text-zinc-400,
+  & .text-neutral-100,
+  & .text-neutral-200,
+  & .text-neutral-300,
+  & .text-neutral-400 {
+    color: #18181b !important;
+  }
+
+  & .text-zinc-500 {
+    color: #27272a !important;
+  }
+
+  /* Ensure headings are visible */
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    color: #09090b !important;
+  }
+
+  /* Ensure paragraphs and spans are visible */
+  & p,
+  & span,
+  & a,
+  & li {
+    color: #18181b !important;
+  }
+
+  /* Keep links distinguishable */
+  & a {
+    color: #0284c7 !important;
+  }
+
+  & a:hover {
+    color: #0369a1 !important;
+  }
+
+  /* Background overrides */
+  & .bg-zinc-950 {
+    background-color: #fdfdfd !important;
+    background-image: none !important;
+  }
+
+  & .bg-zinc-900 {
+    background-color: #fafafa !important;
+  }
+
+  & .bg-zinc-900\/50 {
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  & .bg-zinc-800,
+  & .bg-zinc-700 {
+    background-color: #e4e4e7 !important;
+  }
+
+  /* Navbar and Footer */
+  & nav {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  & .main-footer {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border: none !important;
+  }
+
+  /* Tech badges */
+  & .tech-badge,
+  & span.bg-zinc-800,
+  & span.bg-zinc-700 {
+    background-color: #e4e4e7 !important;
+    color: #09090b !important;
+  }
+
+  & .bg-zinc-400,
+  & span.bg-zinc-400 {
+    background-color: #27272a !important;
+    color: #f4f4f5 !important;
+  }
+
+  /* Borders */
+  & .border-zinc-800,
+  & .border-zinc-700,
+  & .border-white\/10,
+  & .border-white\/5,
+  & .border-zinc-700\/50 {
+    border-color: #d4d4d8 !important;
+  }
+
+  /* Glass card effect */
+  & .glass-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Glow Orbs */
+  & .absolute.bg-primary\/20,
+  & .absolute.bg-primary\/15,
+  & .absolute.bg-primary\/10 {
+    background-color: var(--primary) !important;
+    opacity: 0.15 !important;
+    filter: blur(120px) !important;
+  }
+
+  /* Skill tags */
+  & .bg-primary\/20.text-primary {
+    background-color: rgba(2, 132, 199, 0.1) !important;
+    color: #0284c7 !important;
+  }
+
+  /* Primary colored elements remain visible */
+  & .text-primary {
+    color: #0284c7 !important;
+  }
+
+  /* Ensure buttons remain visible */
+  & button,
+  & .btn {
+    color: var(--primary-foreground) !important;
+  }
+
+  /* Override any element with inline dark text colors */
+  & [class*="text-white"],
+  & [class*="text-zinc-100"],
+  & [class*="text-zinc-200"],
+  & [class*="text-zinc-100"] {
+    color: #18181b !important;
+  }
+}
+
+/* Special handling for specific section overrides */
+html.light-mode section.bg-zinc-950 {
   background-color: #fdfdfd !important;
-  background-image: none !important;
 }
 
-.light-mode .bg-zinc-900,
-.light-mode div.bg-zinc-900,
-.light-mode nav.bg-zinc-950\/80 {
-  background-color: #f4f4f5 !important;
+html.light-mode main.bg-zinc-950 {
+  background-color: #fdfdfd !important;
 }
 
-/* Experience & content cards — white with shadow so they're visible on light background */
-.light-mode .bg-zinc-900\/50 {
-  background-color: #ffffff !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
-}
-
-.light-mode .bg-zinc-800,
-.light-mode .bg-zinc-700,
-.light-mode .bg-zinc-800\/50,
-.light-mode span.bg-zinc-800,
-.light-mode span.bg-zinc-700 {
-  background-color: #e4e4e7 !important;
-  color: #18181b !important;
-}
-
-.light-mode .bg-zinc-400,
-.light-mode span.bg-zinc-400 {
-  background-color: #27272a !important;
-}
-
-.light-mode .text-white,
-.light-mode h1.text-white,
-.light-mode h2.text-white,
-.light-mode h3.text-white,
-.light-mode span.text-white,
-.light-mode p.text-white,
-.light-mode a.text-white {
-  color: #09090b !important;
-}
-
-.light-mode .text-zinc-100,
-.light-mode .text-zinc-200,
-.light-mode .text-zinc-300,
-.light-mode .text-zinc-400 {
-  color: #18181b !important;
-}
-
-.light-mode .text-zinc-500 {
-  color: #3f3f46 !important;
-}
-
-.light-mode .border-zinc-800,
-.light-mode .border-zinc-700,
-.light-mode .border-white\/10,
-.light-mode .border-white\/5,
-.light-mode .border-zinc-700\/50 {
-  border-color: #d4d4d8 !important;
-}
-
-.light-mode .glass-card {
-  background: rgba(255, 255, 255, 0.7) !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(10px);
-}
-
-/* Adjust Glow Orbs for Light Mode */
-.light-mode .absolute.bg-primary\/20,
-.light-mode .absolute.bg-primary\/15,
-.light-mode .absolute.bg-primary\/10 {
-  background-color: var(--primary) !important;
-  opacity: 0.15 !important;
-  filter: blur(120px) !important;
-}
-
-/* Skill tags and badges */
-.light-mode .bg-primary\/20.text-primary {
-  background-color: rgba(2, 132, 199, 0.1) !important;
-  color: #0284c7 !important;
-}
-
-/* Navbar specific */
-.light-mode nav {
-  border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+html.light-mode div.bg-zinc-900 {
+  background-color: #fafafa !important;
 }
 
 @keyframes reverse-spin {
@@ -158,4 +222,30 @@ button {
 
 .animate-spin-slow {
   animation: spin 20s linear infinite;
+}
+
+/* Custom Scrollbar Styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  opacity: 0.2;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  opacity: 0.5;
+}
+
+/* Firefox */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
 }

@@ -16,7 +16,7 @@ export default function Experience() {
             {/* Extra glow for Certifications */}
             <div className="absolute bottom-10 right-10 w-64 h-64 bg-primary/10 rounded-full blur-[80px]" />
 
-            <div className="max-w-3xl mx-auto space-y-20 relative z-10">
+            <div className="max-w-7xl mx-auto space-y-20 relative z-10">
                 {/* Experience Section */}
                 <div>
                     <div className="flex flex-col items-center mb-8">
@@ -67,76 +67,112 @@ export default function Experience() {
                     </div>
                 </div>
 
-                {/* Certifications Section */}
+                {/* Skills & Certifications Section */}
+                <div id="skills" className="scroll-mt-20"></div>
                 <div id="certifications" className="scroll-mt-20">
                     <div className="flex flex-col items-center mb-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Certifications</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Skills & Certifications</h2>
                         <div className="w-20 h-1 bg-primary rounded-full"></div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {resumeData.certifications.map((cert, index) => {
-                            const isPdf = cert.image?.toLowerCase().endsWith('.pdf');
-                            const isImage = cert.image && !isPdf;
-
-                            return (
-                                <div
-                                    key={index}
-                                    onClick={() => setSelectedCert(cert)}
-                                    className="group relative flex items-center gap-5 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)] cursor-pointer overflow-hidden"
-                                >
-                                    {/* Hover Preview Overlay */}
-                                    <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-zinc-950/95 backdrop-blur-sm rounded-2xl p-4 flex items-center justify-center">
-                                        <div className="relative w-full h-full rounded-lg overflow-hidden">
-                                            {isImage && (
-                                                <Image
-                                                    src={cert.image}
-                                                    alt={cert.title}
-                                                    fill
-                                                    className="object-contain"
-                                                />
-                                            )}
-                                            {isPdf && (
-                                                <iframe
-                                                    src={`${cert.image}#toolbar=0&navpanes=0&scrollbar=0`}
-                                                    className="w-full h-full border-none object-contain"
-                                                    title={cert.title}
-                                                    tabIndex="-1"
-                                                />
-                                            )}
+                    <div className="grid grid-cols-2 gap-4 md:gap-10 items-start">
+                        {/* Left Side: Technical Skills */}
+                        <div className="space-y-6">
+                            <h3 className="text-base md:text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                                </span>
+                                <span className="truncate">Technical Skills</span>
+                            </h3>
+                            <div className="grid grid-cols-1 gap-4">
+                                {resumeData.skills.map((skillGroup, index) => (
+                                    <div
+                                        key={index}
+                                        className="bg-zinc-900/50 border border-zinc-800 p-3 md:p-4 rounded-xl hover:border-primary/30 transition-all duration-300 group"
+                                    >
+                                        <h4 className="text-[10px] md:text-sm font-semibold text-zinc-400 mb-2 md:mb-3 group-hover:text-primary transition-colors truncate">
+                                            {skillGroup.category}
+                                        </h4>
+                                        <div className="flex flex-wrap gap-1.5 md:gap-2">
+                                            {skillGroup.items.map((skill, i) => (
+                                                <span
+                                                    key={i}
+                                                    className="bg-zinc-800/50 text-zinc-300 text-[9px] md:text-[11px] px-1.5 py-0.5 md:px-2 md:py-1 rounded-md border border-zinc-700/30"
+                                                >
+                                                    {skill}
+                                                </span>
+                                            ))}
                                         </div>
                                     </div>
+                                ))}
+                            </div>
+                        </div>
 
-                                    <div className="relative w-20 h-20 flex-shrink-0 bg-zinc-800 rounded-lg overflow-hidden group-hover:ring-2 ring-primary/20 transition-all p-1 z-0">
-                                        {isImage ? (
-                                            <Image
-                                                src={cert.image}
-                                                alt={cert.title}
-                                                fill
-                                                className="object-contain p-1 transition-transform duration-500 group-hover:scale-105"
-                                            />
-                                        ) : (
-                                            <div className="flex items-center justify-center w-full h-full text-zinc-500 group-hover:text-primary transition-colors">
-                                                {isPdf ? (
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                                                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                                                        <polyline points="14 2 14 8 20 8" />
-                                                        <text x="8" y="20" fontSize="6" fill="currentColor" fontWeight="bold">PDF</text>
-                                                    </svg>
+                        {/* Right Side: Certifications (Scrollable) */}
+                        <div className="space-y-6">
+                            <h3 className="text-base md:text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <span className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
+                                </span>
+                                <span className="truncate">Certifications</span>
+                            </h3>
+                            <div className="max-h-[640px] overflow-y-auto pr-2 md:pr-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent space-y-3 md:space-y-4">
+                                {resumeData.certifications.map((cert, index) => {
+                                    const isPdf = cert.image?.toLowerCase().endsWith('.pdf');
+                                    const isImage = cert.image && !isPdf;
+
+                                    return (
+                                        <div
+                                            key={index}
+                                            onClick={() => setSelectedCert(cert)}
+                                            className="group relative flex items-center gap-2 md:gap-4 bg-zinc-900 border border-zinc-800 rounded-xl p-3 md:p-4 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(149,213,178,0.1)] cursor-pointer overflow-hidden"
+                                        >
+                                            {/* Hover Preview Overlay */}
+                                            <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none bg-zinc-950/95 backdrop-blur-sm rounded-xl p-2 flex items-center justify-center">
+                                                <div className="relative w-full h-full rounded-lg overflow-hidden">
+                                                    {isImage && (
+                                                        <Image
+                                                            src={cert.image}
+                                                            alt={cert.title}
+                                                            fill
+                                                            className="object-contain"
+                                                        />
+                                                    )}
+                                                    {isPdf && (
+                                                        <iframe
+                                                            src={`${cert.image}#toolbar=0&navpanes=0&scrollbar=0`}
+                                                            className="w-full h-full border-none object-contain opacity-50"
+                                                            title={cert.title}
+                                                            tabIndex="-1"
+                                                        />
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            <div className="relative w-10 h-10 md:w-14 md:h-14 flex-shrink-0 bg-zinc-800 rounded-lg overflow-hidden group-hover:ring-2 ring-primary/20 transition-all p-1">
+                                                {isImage ? (
+                                                    <Image
+                                                        src={cert.image}
+                                                        alt={cert.title}
+                                                        fill
+                                                        className="object-contain p-1"
+                                                    />
                                                 ) : (
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                                    <div className="flex items-center justify-center w-full h-full text-zinc-500">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></svg>
+                                                    </div>
                                                 )}
                                             </div>
-                                        )}
-                                    </div>
-                                    <div className="z-0">
-                                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors leading-tight">{cert.title}</h3>
-                                        <p className="text-zinc-400 text-sm mb-1">{cert.issuer}</p>
-                                        <p className="text-zinc-600 text-xs font-mono">{cert.date}</p>
-                                    </div>
-                                </div>
-                            );
-                        })}
+                                            <div className="flex-1 min-w-0">
+                                                <h4 className="text-sm font-bold text-white truncate group-hover:text-primary transition-colors">{cert.title}</h4>
+                                                <p className="text-zinc-400 text-xs truncate">{cert.issuer}</p>
+                                                <p className="text-zinc-600 text-[10px] font-mono">{cert.date}</p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

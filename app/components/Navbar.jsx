@@ -20,7 +20,6 @@ export default function Navbar() {
         { name: "Education", href: "#education" },
         { name: "Skills", href: "#skills" },
         { name: "Experience", href: "#experience" },
-        { name: "Certifications", href: "#certifications" },
         { name: "Contact", href: "#contact" },
     ];
 
@@ -31,7 +30,7 @@ export default function Navbar() {
                 : "bg-transparent py-6"
                 }`}
         >
-            <div className="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <Link href="/" className="text-2xl font-bold text-white">
                     JE<span className="text-primary">SS</span>!
                 </Link>

@@ -17,7 +17,7 @@ export default function Education() {
             </div>
 
             {/* Mobile: simple stacked cards; Desktop: alternating timeline */}
-            <div className="relative max-w-3xl mx-auto">
+            <div className="relative max-w-7xl mx-auto">
                 {/* Desktop center timeline line */}
                 <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-zinc-700/60" />
 

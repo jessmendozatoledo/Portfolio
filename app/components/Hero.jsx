@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] transition-all duration-700" />
             <div className="absolute bottom-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px] transition-all duration-700" />
 
-            <div className="w-full max-w-4xl mx-auto px-2 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+            <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
                 {/* Left — text */}
                 <div className="space-y-4 text-center md:text-left order-2 md:order-1">
                     <p className="text-primary font-medium tracking-wide text-sm md:text-base transition-colors duration-500">
@@ -166,7 +166,7 @@ export default function Hero() {
                                     src="/shock.png"
                                     alt="Surprised"
                                     fill
-                                    className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30"
+                                    className="object-cover opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 z-30"
                                 />
                             )}
 
