@@ -128,16 +128,18 @@ export default function Hero() {
 
                         {/* Profile Picture Container */}
                         <div
-                            className="group relative w-[52%] h-[52%] bg-zinc-900 border-2 border-primary/30 flex items-center justify-center z-20 overflow-hidden shadow-2xl shadow-primary/20 hover:scale-105 transition-all duration-500 ease-out light-mode:bg-zinc-200"
+                            className="group relative w-[52%] h-[52%] bg-zinc-900 border-2 border-primary/30 flex items-center justify-center z-20 overflow-hidden shadow-2xl shadow-primary/20 hover:scale-105 transition-all duration-500 ease-out light-mode:bg-zinc-200 select-none"
                             style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
+                            onContextMenu={(e) => e.preventDefault()}
                         >
                             {/* Layer 1: Base Image (No Eyeglasses) */}
                             <Image
                                 src={resumeData.avatarUrl}
                                 alt={resumeData.name}
                                 fill
-                                className="object-cover"
+                                className="object-cover pointer-events-none"
                                 priority
+                                draggable={false}
                             />
 
                             {/* Layer 2: Putting Eyeglasses Video (Dark State) */}
@@ -147,7 +149,9 @@ export default function Hero() {
                                 muted
                                 playsInline
                                 onEnded={handleVideoEnd}
-                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${!isLight ? 'opacity-100' : 'opacity-0'}`}
+                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${!isLight ? 'opacity-100' : 'opacity-0'} pointer-events-none`}
+                                onContextMenu={(e) => e.preventDefault()}
+                                controlsList="nodownload"
                             />
 
                             {/* Layer 3: Removing Eyeglasses Video (Transition only) */}
@@ -157,7 +161,9 @@ export default function Hero() {
                                 muted
                                 playsInline
                                 onEnded={handleVideoEnd}
-                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${(isLight && isTransitioning) ? 'opacity-100' : 'opacity-0'}`}
+                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${(isLight && isTransitioning) ? 'opacity-100' : 'opacity-0'} pointer-events-none`}
+                                onContextMenu={(e) => e.preventDefault()}
+                                controlsList="nodownload"
                             />
 
                             {/* Layer 4: Shock Image (Hover - only after first dark→light toggle, stays in light mode) */}
@@ -166,7 +172,8 @@ export default function Hero() {
                                     src="/shock.png"
                                     alt="Surprised"
                                     fill
-                                    className="object-cover opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 z-30"
+                                    className="object-cover opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 z-30 pointer-events-none"
+                                    draggable={false}
                                 />
                             )}
 

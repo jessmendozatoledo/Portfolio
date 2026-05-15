@@ -117,7 +117,18 @@ export default function Experience() {
                                 <span className="truncate">Certifications</span>
                             </h3>
                             <div className="max-h-[640px] overflow-y-auto pr-2 md:pr-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent space-y-3 md:space-y-4">
-                                {resumeData.certifications.map((cert, index) => {
+                                {([...resumeData.certifications].sort((a, b) => {
+                                    const parseDate = (dateStr) => {
+                                        // Handle date ranges by taking the end date
+                                        const parts = dateStr.split(/[-–—]/);
+                                        const lastPart = parts[parts.length - 1].trim();
+                                        // Remove trailing commas if any (e.g., "February 2,")
+                                        const cleanDate = lastPart.replace(/,$/, '').trim();
+                                        const date = new Date(cleanDate);
+                                        return isNaN(date.getTime()) ? 0 : date.getTime();
+                                    };
+                                    return parseDate(b.date) - parseDate(a.date);
+                                })).map((cert, index) => {
                                     const isPdf = cert.image?.toLowerCase().endsWith('.pdf');
                                     const isImage = cert.image && !isPdf;
 
