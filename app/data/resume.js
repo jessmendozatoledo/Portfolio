@@ -144,7 +144,7 @@ export const resumeData = {
         {
             title: "On-The-Job Training",
             issuer: "Inspire Holdoings Incorporated",
-            date: "February 2, - March 30, 2026",
+            date: "February 2 - March 30, 2026",
             image: "/certs/COC.jpg",
         },
         {
@@ -174,8 +174,8 @@ export const resumeData = {
         {
             title: "Anti Virus and Firewall Protection",
             issuer: "Ethel Programming Computer Programming Services",
-            date: "April 15, 2024",
-            image: "/certs/Anti_virus_firewall_protection_april.15.2024.png",
+            date: "April 15, 2026",
+            image: "/certs/Anti_virus_firewall_protection_april.15.2026.png",
         },
         {
             title: "Computer Tools in Computer Services",
