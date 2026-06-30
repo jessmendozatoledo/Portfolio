@@ -25,7 +25,13 @@ export default function Experience() {
                     </div>
 
                     <div className="grid gap-6">
-                        {resumeData.experience.map((exp, index) => (
+                        {[...resumeData.experience].sort((a, b) => {
+                            const getYear = (str) => {
+                                const match = str.match(/\d{4}/g);
+                                return match ? Math.max(...match.map(Number)) : 0;
+                            };
+                            return getYear(b.year) - getYear(a.year);
+                        }).map((exp, index) => (
                             <div key={index} className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(149,213,178,0.1)]">
                                 <div className="mb-4">
                                     <h3 className="inline text-lg md:text-xl font-bold text-white leading-tight mr-3">
