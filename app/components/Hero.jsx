@@ -72,9 +72,9 @@ export default function Hero() {
                     <p className="text-primary font-medium tracking-wide text-sm md:text-base transition-colors duration-500">
                         Hello, welcome
                     </p>
-                    <h1 className="text-3xl md:text-5xl font-light transition-colors duration-700 text-white light-mode:text-zinc-900">
-                        I'm <span className="text-primary font-[family-name:var(--font-oswald)] font-bold uppercase tracking-wide">
-                            JESS M. TOLEDO
+                    <h1 className="text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-light transition-colors duration-700 text-white light-mode:text-zinc-900 whitespace-nowrap">
+                        I'm <span className="text-primary font-[family-name:var(--font-oswald)] font-bold tracking-wide">
+                            Engr. JESS M. TOLEDO, CpE.
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl font-light transition-colors duration-700 text-zinc-300 light-mode:text-zinc-600">
