@@ -126,15 +126,15 @@ export default function ContactUs() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-zinc-400 mb-1">Name *</label>
-                  <input type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} placeholder="Your Name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
+                  <input type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} placeholder="Your Name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-zinc-400 mb-1">Email *</label>
-                  <input type="text" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} placeholder="your@email.com" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
+                  <input type="text" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder="your@email.com" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-zinc-400 mb-1">Message *</label>
-                  <textarea rows="4" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} placeholder="How can we work together?" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+                  <textarea rows="4" value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} placeholder="How can we work together?" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
                 </div>
                 {error && <p className="text-red-500 text-sm text-center">{error}</p>}
                 <button disabled={isSubmitting} onClick={handleSubmit} className="w-full bg-primary text-zinc-950 font-bold py-4 rounded-lg hover:bg-primary/90 disabled:opacity-50 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-primary/20">
