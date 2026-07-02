@@ -1,7 +1,7 @@
 export const resumeData = {
     name: "JESS M. TOLEDO",
     avatarUrl: "/Latest_resume.jpg",
-    role: "Computer Engineer",
+    role: "Computer Engineer — Hardware × Software × Interfaces",
     contact: {
         address: "General Trias, Cavite",
         phone: "+639-7622-17754",
@@ -13,7 +13,7 @@ export const resumeData = {
         },
     },
     summary:
-        "A dedicated Computer Engineer graduate eager to apply practical skills in real-world projects and contribute to technological innovation.",
+        "I build things that bridge the physical and digital: embedded systems that sense the world, and interfaces that make them usable. From ESP32 and Arduino Uno-powered sensors to Raspberry Pi-driven networked infrastructure, I like projects where hardware and code have to actually talk to each other. ",
     education: [
         {
             school: "Philippine Christian University – Dasmariñas",
