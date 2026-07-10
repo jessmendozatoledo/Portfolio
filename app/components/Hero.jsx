@@ -60,7 +60,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-4 transition-all duration-700 ease-in-out bg-zinc-950 light-mode:bg-[#fdfdfd]"
+            className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-4 transition-all duration-700 ease-in-out bg-zinc-950 light-mode:bg-transparent"
         >
             {/* Background glow orbs */}
             <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] transition-all duration-700" />
@@ -184,8 +184,8 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce transition-colors duration-700">
-                <span className="text-zinc-400 light-mode:text-zinc-500 text-xs tracking-widest uppercase">Scroll</span>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-100 animate-bounce transition-colors duration-700 text-zinc-200 light-mode:text-zinc-1000">
+                <span className="text-xs tracking-widest uppercase">Scroll</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
             </div>
         </section>
