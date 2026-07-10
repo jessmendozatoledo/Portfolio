@@ -194,12 +194,10 @@ html.light-mode {
 }
 
 /* Special handling for specific section overrides */
-html.light-mode section.bg-zinc-950 {
-  background-color: #fdfdfd !important;
-}
-
-html.light-mode main.bg-zinc-950 {
-  background-color: #fdfdfd !important;
+html section.bg-zinc-950,
+html main.bg-zinc-950,
+html footer.bg-zinc-950 {
+  background-color: transparent !important;
 }
 
 html.light-mode div.bg-zinc-900 {

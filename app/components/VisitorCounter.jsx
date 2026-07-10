@@ -7,7 +7,7 @@ export default function VisitorCounter() {
     useEffect(() => {
         const fetchVisits = async () => {
             try {
-                const response = await fetch("https://api.counterapi.dev/v1/jess-portfolio/visits/up");
+                const response = await fetch("/api/visitor");
                 const data = await response.json();
                 if (data && data.count) {
                     setCount(data.count);
