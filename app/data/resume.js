@@ -1,7 +1,7 @@
 export const resumeData = {
     name: "JESS M. TOLEDO",
     avatarUrl: "/Latest_resume.jpg",
-    role: "Computer Engineer — Hardware × Software × Interfaces",
+    role: "Computer Engineer — Hardware × Software",
     contact: {
         address: "General Trias, Cavite",
         phone: "+639-7622-17754",
