@@ -37,9 +37,9 @@ button {
   transition: none !important;
 }
 
-/* Light Mode Overrides - Using higher specificity with html.light-mode */
+/* Light Mode Overrides */
 html.light-mode {
-  --background: #fdfdfd;
+  --background: #355e50;
   --foreground: #09090b;
   --primary: #0284c7;
   --secondary: #f4f4f5;
@@ -53,7 +53,6 @@ html.light-mode body {
 /* Force text colors in light mode */
 html.light-mode {
 
-  /* Override all common text color classes */
   & .text-white,
   & .text-zinc-100,
   & .text-zinc-200,
@@ -70,7 +69,6 @@ html.light-mode {
     color: #27272a !important;
   }
 
-  /* Ensure headings are visible */
   & h1,
   & h2,
   & h3,
@@ -80,7 +78,6 @@ html.light-mode {
     color: #09090b !important;
   }
 
-  /* Ensure paragraphs and spans are visible */
   & p,
   & span,
   & a,
@@ -88,7 +85,6 @@ html.light-mode {
     color: #18181b !important;
   }
 
-  /* Keep links distinguishable */
   & a {
     color: #0284c7 !important;
   }
@@ -97,7 +93,6 @@ html.light-mode {
     color: #0369a1 !important;
   }
 
-  /* Background overrides */
   & .bg-zinc-950 {
     background-color: #fdfdfd !important;
     background-image: none !important;
@@ -117,7 +112,6 @@ html.light-mode {
     background-color: #e4e4e7 !important;
   }
 
-  /* Navbar and Footer */
   & nav {
     background-color: rgba(255, 255, 255, 0.8) !important;
     border-bottom-color: rgba(0, 0, 0, 0.05) !important;
@@ -128,7 +122,6 @@ html.light-mode {
     border: none !important;
   }
 
-  /* Tech badges */
   & .tech-badge,
   & span.bg-zinc-800,
   & span.bg-zinc-700 {
@@ -142,7 +135,6 @@ html.light-mode {
     color: #f4f4f5 !important;
   }
 
-  /* Borders */
   & .border-zinc-800,
   & .border-zinc-700,
   & .border-white\/10,
@@ -151,14 +143,12 @@ html.light-mode {
     border-color: #d4d4d8 !important;
   }
 
-  /* Glass card effect */
   & .glass-card {
     background: rgba(255, 255, 255, 0.7) !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     backdrop-filter: blur(10px);
   }
 
-  /* Glow Orbs */
   & .absolute.bg-primary\/20,
   & .absolute.bg-primary\/15,
   & .absolute.bg-primary\/10 {
@@ -167,30 +157,49 @@ html.light-mode {
     filter: blur(120px) !important;
   }
 
-  /* Skill tags */
   & .bg-primary\/20.text-primary {
     background-color: rgba(2, 132, 199, 0.1) !important;
     color: #0284c7 !important;
   }
 
-  /* Primary colored elements remain visible */
   & .text-primary {
     color: #0284c7 !important;
   }
 
-  /* Ensure buttons remain visible */
   & button,
   & .btn {
     color: var(--primary-foreground) !important;
   }
 
-  /* Override any element with inline dark text colors */
   & [class*="text-white"],
   & [class*="text-zinc-100"],
-  & [class*="text-zinc-200"],
-  & [class*="text-zinc-100"] {
+  & [class*="text-zinc-200"] {
     color: #18181b !important;
   }
+}
+
+/* HIGH SPECIFICITY OVERRIDES FOR VIDEO MODAL IN LIGHT MODE */
+html.light-mode #video-modal-card,
+html.light-mode #video-modal-card div,
+html.light-mode #video-modal-card header,
+html.light-mode #video-modal-card main {
+  background-color: #09090b !important;
+  border-color: #27272a !important;
+}
+
+html.light-mode #video-modal-title,
+html.light-mode #video-modal-title * {
+  color: #ffffff !important;
+}
+
+html.light-mode #video-modal-subtitle {
+  color: #d4d4d8 !important;
+}
+
+html.light-mode #video-modal-close-btn,
+html.light-mode #video-modal-close-btn svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 /* Special handling for specific section overrides */
