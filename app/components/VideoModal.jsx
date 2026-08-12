@@ -8,7 +8,7 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
 
     const videos = videoData?.videos || [
         {
-            title: "Google Drive Video Demos",
+            title: "Video Demonstration",
             embedUrl: `https://drive.google.com/embeddedfolderview?id=${folderId}#grid`,
         },
     ];
@@ -33,15 +33,15 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/90 backdrop-blur-md animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
             onClick={onClose}
         >
             <div
-                className="relative w-full max-w-4xl bg-zinc-900 rounded-2xl border border-white/10 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
+                className="relative w-full max-w-5xl bg-zinc-950 rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Modal Header */}
-                <div className="flex items-center justify-between p-4 md:p-5 border-b border-zinc-800 bg-zinc-900">
+                {/* Modal Header — Forced Dark Theme */}
+                <div className="flex items-center justify-between p-4 md:p-5 border-b border-zinc-800 bg-zinc-950 text-white">
                     <div>
                         <h3 className="text-lg md:text-xl font-bold text-white flex items-center gap-2">
                             <span className="p-1.5 rounded-lg bg-primary/10 text-primary">
@@ -57,7 +57,7 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
 
                     <button
                         onClick={onClose}
-                        className="p-2 rounded-lg hover:bg-primary/10 text-zinc-400 hover:text-primary transition-all duration-200 group"
+                        className="p-2 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-all duration-200 group"
                         aria-label="Close video modal"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:rotate-90 transition-transform duration-300">
@@ -69,15 +69,15 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
 
                 {/* Video Selector Tabs if multiple */}
                 {videos.length > 1 && (
-                    <div className="flex items-center gap-2 p-3 bg-zinc-950/60 border-b border-zinc-800/80 px-4 md:px-5">
+                    <div className="flex items-center gap-2 p-3 bg-zinc-900 border-b border-zinc-800 px-4 md:px-5">
                         {videos.map((vid, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setActiveVideo(idx)}
-                                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                                className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all ${
                                     activeVideo === idx
                                         ? "bg-primary text-zinc-950 font-bold shadow-md shadow-primary/20"
-                                        : "bg-zinc-800/80 text-zinc-400 hover:bg-zinc-800 hover:text-white"
+                                        : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white"
                                 }`}
                             >
                                 🎬 {vid.title}
@@ -87,15 +87,17 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
                 )}
 
                 {/* Content Player Area */}
-                <div className="flex-1 bg-black relative flex items-center justify-center min-h-[350px] md:min-h-[480px] p-2">
+                <div className="flex-1 bg-zinc-950 relative flex items-center justify-center p-3">
                     {currentVideo?.embedUrl ? (
-                        <iframe
-                            src={currentVideo.embedUrl}
-                            className="w-full h-[60vh] rounded-lg border-0 bg-zinc-950"
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen
-                            title={currentVideo.title || "Video Demonstration"}
-                        />
+                        <div className="w-full h-[65vh] rounded-xl overflow-hidden border border-zinc-800/80 bg-zinc-900 shadow-inner">
+                            <iframe
+                                src={currentVideo.embedUrl}
+                                className="w-full h-full border-0 bg-zinc-900"
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen
+                                title={currentVideo.title || "Video Demonstration"}
+                            />
+                        </div>
                     ) : (
                         <video
                             key={currentVideo?.src}
@@ -103,7 +105,7 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
                             controlsList="nodownload"
                             onContextMenu={(e) => e.preventDefault()}
                             autoPlay
-                            className="max-h-[65vh] w-full rounded-lg object-contain select-none"
+                            className="max-h-[65vh] w-full rounded-xl object-contain select-none bg-black"
                         >
                             <source src={currentVideo?.src} type="video/mp4" />
                             Your browser does not support the video tag.
