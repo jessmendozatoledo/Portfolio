@@ -46,6 +46,20 @@ export const resumeData = {
             category: "Academic Project",
             location: "Philippine Christian University - Dasmariñas, Cavite",
             year: "2024 - 2025",
+            links: [
+                { label: "GitHub", url: "https://github.com/jessmendozatoledo/Thesis-Smart-Feeder", type: "github" },
+                { label: "Live Demo", url: "https://thesis-smart-feeder.onrender.com/", type: "demo" },
+                {
+                    label: "Video Demo",
+                    type: "video_modal",
+                    videoData: {
+                        videos: [
+                            { title: "Hardware & System Demo", src: "/Thesis_demo.mp4" },
+                            { title: "Dashboard & Web UI Demo", src: "/Thesis_UI.mp4" }
+                        ]
+                    }
+                }
+            ],
             description: [
                 "Developed an automated dog feeding system using ESP32 (C/C++) and Raspberry Pi (Python).",
                 "Implemented real-time food level monitoring and scheduled dispensing.",
