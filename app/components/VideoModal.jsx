@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 export default function VideoModal({ isOpen, onClose, videoData }) {
     const [activeVideo, setActiveVideo] = useState(0);
 
+    const folderId = "1mb26BXmaoNjK7ieAh8JMaSzBOwg_A2SW";
+
     const videos = videoData?.videos || [
-        { title: "Hardware & System Demo", src: "/Thesis_demo.mp4" },
-        { title: "Dashboard & Web UI Demo", src: "/Thesis_UI.mp4" },
+        {
+            title: "Google Drive Video Demos",
+            embedUrl: `https://drive.google.com/embeddedfolderview?id=${folderId}#grid`,
+        },
     ];
 
     useEffect(() => {
@@ -24,6 +28,8 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
     }, [isOpen, onClose]);
 
     if (!isOpen) return null;
+
+    const currentVideo = videos[activeVideo];
 
     return (
         <div
@@ -61,7 +67,7 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
                     </button>
                 </div>
 
-                {/* Video Selector Tabs */}
+                {/* Video Selector Tabs if multiple */}
                 {videos.length > 1 && (
                     <div className="flex items-center gap-2 p-3 bg-zinc-950/60 border-b border-zinc-800/80 px-4 md:px-5">
                         {videos.map((vid, idx) => (
@@ -80,19 +86,29 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
                     </div>
                 )}
 
-                {/* Video Player Area */}
-                <div className="flex-1 bg-black relative flex items-center justify-center min-h-[300px] md:min-h-[450px] p-2">
-                    <video
-                        key={videos[activeVideo]?.src}
-                        controls
-                        controlsList="nodownload"
-                        onContextMenu={(e) => e.preventDefault()}
-                        autoPlay
-                        className="max-h-[65vh] w-full rounded-lg object-contain select-none"
-                    >
-                        <source src={videos[activeVideo]?.src} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                {/* Content Player Area */}
+                <div className="flex-1 bg-black relative flex items-center justify-center min-h-[350px] md:min-h-[480px] p-2">
+                    {currentVideo?.embedUrl ? (
+                        <iframe
+                            src={currentVideo.embedUrl}
+                            className="w-full h-[60vh] rounded-lg border-0 bg-zinc-950"
+                            allow="autoplay; encrypted-media"
+                            allowFullScreen
+                            title={currentVideo.title || "Video Demonstration"}
+                        />
+                    ) : (
+                        <video
+                            key={currentVideo?.src}
+                            controls
+                            controlsList="nodownload"
+                            onContextMenu={(e) => e.preventDefault()}
+                            autoPlay
+                            className="max-h-[65vh] w-full rounded-lg object-contain select-none"
+                        >
+                            <source src={currentVideo?.src} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    )}
                 </div>
             </div>
         </div>

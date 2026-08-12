@@ -54,8 +54,10 @@ export const resumeData = {
                     type: "video_modal",
                     videoData: {
                         videos: [
-                            { title: "Hardware & System Demo", src: "/Thesis_demo.mp4" },
-                            { title: "Dashboard & Web UI Demo", src: "/Thesis_UI.mp4" }
+                            {
+                                title: "Video Demonstration",
+                                embedUrl: "https://drive.google.com/embeddedfolderview?id=1mb26BXmaoNjK7ieAh8JMaSzBOwg_A2SW#grid"
+                            }
                         ]
                     }
                 }
