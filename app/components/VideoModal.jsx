@@ -33,18 +33,23 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200"
             onClick={onClose}
         >
+            {/* Forced Dark Modal Container */}
             <div
-                className="relative w-full max-w-5xl bg-zinc-950 rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
+                className="relative w-full max-w-5xl rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
+                style={{ backgroundColor: "#09090b", color: "#ffffff" }}
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Modal Header — Forced Dark Theme */}
-                <div className="flex items-center justify-between p-4 md:p-5 border-b border-zinc-800 bg-zinc-950 text-white">
+                {/* Modal Header — Forced Dark Background */}
+                <div 
+                    className="flex items-center justify-between p-4 md:p-5 border-b border-zinc-800"
+                    style={{ backgroundColor: "#09090b", color: "#ffffff" }}
+                >
                     <div>
                         <h3 className="text-lg md:text-xl font-bold text-white flex items-center gap-2">
-                            <span className="p-1.5 rounded-lg bg-primary/10 text-primary">
+                            <span className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <polygon points="23 7 16 12 23 17 23 7" />
                                     <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
@@ -69,14 +74,17 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
 
                 {/* Video Selector Tabs if multiple */}
                 {videos.length > 1 && (
-                    <div className="flex items-center gap-2 p-3 bg-zinc-900 border-b border-zinc-800 px-4 md:px-5">
+                    <div 
+                        className="flex items-center gap-2 p-3 border-b border-zinc-800 px-4 md:px-5"
+                        style={{ backgroundColor: "#18181b" }}
+                    >
                         {videos.map((vid, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setActiveVideo(idx)}
                                 className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all ${
                                     activeVideo === idx
-                                        ? "bg-primary text-zinc-950 font-bold shadow-md shadow-primary/20"
+                                        ? "bg-emerald-500 text-zinc-950 font-bold shadow-md shadow-emerald-500/20"
                                         : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white"
                                 }`}
                             >
@@ -86,13 +94,17 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
                     </div>
                 )}
 
-                {/* Content Player Area */}
-                <div className="flex-1 bg-zinc-950 relative flex items-center justify-center p-3">
+                {/* Content Player Area with Dark Filter on Google Drive iframe */}
+                <div 
+                    className="flex-1 relative flex items-center justify-center p-3"
+                    style={{ backgroundColor: "#09090b" }}
+                >
                     {currentVideo?.embedUrl ? (
-                        <div className="w-full h-[65vh] rounded-xl overflow-hidden border border-zinc-800/80 bg-zinc-900 shadow-inner">
+                        <div className="w-full h-[65vh] rounded-xl overflow-hidden border border-zinc-800/80 bg-zinc-950 shadow-inner">
                             <iframe
                                 src={currentVideo.embedUrl}
-                                className="w-full h-full border-0 bg-zinc-900"
+                                className="w-full h-full border-0 bg-zinc-950"
+                                style={{ filter: "invert(0.9) hue-rotate(180deg)", borderRadius: "0.75rem" }}
                                 allow="autoplay; encrypted-media"
                                 allowFullScreen
                                 title={currentVideo.title || "Video Demonstration"}
