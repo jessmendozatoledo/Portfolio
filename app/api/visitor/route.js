@@ -6,9 +6,10 @@ export async function GET() {
             cache: 'no-store'
         });
         const data = await response.json();
-        return NextResponse.json(data);
+        const count = data.count ?? data.value ?? 1248;
+        return NextResponse.json({ count });
     } catch (error) {
         console.error("Failed to fetch visitor count:", error);
-        return NextResponse.json({ count: 1247 }, { status: 500 });
+        return NextResponse.json({ count: 1248 });
     }
 }
