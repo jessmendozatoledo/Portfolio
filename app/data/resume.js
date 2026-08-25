@@ -155,7 +155,7 @@ export const resumeData = {
             title: "Linux For Cybersecurity",
             issuer: "BlackStride Cyber",
             date: "March 13, 2026",
-            image: "/certs/Black_stride. march.13.2026-1.png",
+            image: "/certs/Black_stride.png",
         },
         {
             title: "On-The-Job Training",
