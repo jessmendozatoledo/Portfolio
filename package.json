@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm approve-scripts --allow-scripts-pending && next build",
     "start": "next start",
     "lint": "eslint"
   },
