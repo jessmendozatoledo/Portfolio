@@ -48,7 +48,7 @@ export const resumeData = {
             year: "2024 - 2025",
             links: [
                 { label: "GitHub", url: "https://github.com/jessmendozatoledo/Thesis-Smart-Feeder", type: "github" },
-                { label: "Live Demo", url: "https://thesis-smart-feeder.onrender.com/", type: "demo" },
+                { label: "Live Demo", url: "https://jmtoledo.pythonanywhere.com/", type: "demo" },
                 {
                     label: "Video Demo",
                     type: "video_modal",
