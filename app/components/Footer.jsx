@@ -17,9 +17,9 @@ export default function Footer() {
         {/* Left — Credit */}
         <p className="text-zinc-400 text-[11px] text-center sm:text-left tracking-wider uppercase">
           Designed &amp; Built by{" "}
-          <span className="font-semibold text-primary">
+          <a href="https://m.me/jmtoled0" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
             Jess Mendoza Toledo
-          </span>
+          </a>
         </p>
 
         {/* Right — Tech stack badges */}
