@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import CertificationModal from "./CertificationModal";
 import VideoModal from "./VideoModal";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Experience() {
     const [selectedCert, setSelectedCert] = useState(null);
@@ -21,10 +22,12 @@ export default function Experience() {
             <div className="max-w-7xl mx-auto space-y-20 relative z-10">
                 {/* Experience Section */}
                 <div>
-                    <div className="flex flex-col items-center mb-8">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Experience</h2>
-                        <div className="w-20 h-1 bg-primary rounded-full"></div>
-                    </div>
+                    <ScrollReveal animation="fade-up">
+                        <div className="flex flex-col items-center mb-8">
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Experience</h2>
+                            <div className="w-20 h-1 bg-primary rounded-full"></div>
+                        </div>
+                    </ScrollReveal>
 
                     <div className="grid gap-6">
                         {[...resumeData.experience].sort((a, b) => {
@@ -37,10 +40,14 @@ export default function Experience() {
                             const allLinks = exp.links || (exp.link ? [{ label: "View Link", url: exp.link, type: "external" }] : []);
 
                             return (
-                                <div
+                                <ScrollReveal
                                     key={index}
-                                    className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(149,213,178,0.1)]"
+                                    animation="fade-up"
+                                    delay={index * 120}
                                 >
+                                    <div
+                                        className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(149,213,178,0.1)]"
+                                    >
                                     <div className="mb-4">
                                         <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
                                             {exp.title}
@@ -118,6 +125,7 @@ export default function Experience() {
                                         </div>
                                     )}
                                 </div>
+                            </ScrollReveal>
                             );
                         })}
                     </div>
@@ -126,14 +134,16 @@ export default function Experience() {
                 {/* Skills & Certifications Section */}
                 <div id="skills" className="scroll-mt-20"></div>
                 <div id="certifications" className="scroll-mt-20">
-                    <div className="flex flex-col items-center mb-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Skills & Certifications</h2>
-                        <div className="w-20 h-1 bg-primary rounded-full"></div>
-                    </div>
+                    <ScrollReveal animation="fade-up">
+                        <div className="flex flex-col items-center mb-12">
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Skills & Certifications</h2>
+                            <div className="w-20 h-1 bg-primary rounded-full"></div>
+                        </div>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-2 gap-4 md:gap-10 items-start">
                         {/* Left Side: Technical Skills */}
-                        <div className="space-y-6">
+                        <ScrollReveal animation="fade-right" delay={100} className="space-y-6">
                             <h3 className="text-base md:text-xl font-bold text-white mb-6 flex items-center gap-2">
                                 <span className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
@@ -162,10 +172,10 @@ export default function Experience() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Right Side: Certifications (Scrollable) */}
-                        <div className="space-y-6">
+                        <ScrollReveal animation="fade-left" delay={150} className="space-y-6">
                             <h3 className="text-base md:text-xl font-bold text-white mb-6 flex items-center gap-2">
                                 <span className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
@@ -239,7 +249,7 @@ export default function Experience() {
                                     );
                                 })}
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </div>

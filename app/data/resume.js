@@ -73,12 +73,12 @@ export const resumeData = {
             type: "Practical Research II - Presentor",
             category: "Academic Project / GENTEFL Presentor -",
             location: "Da Nang, Vietnam",
-            year: "2019-2022",
+            year: "2019-2023",
             description: [
                 "Conducted a comprehensive study on the factors influencing career choices among HUMSS students.",
                 "Analyzed the impact of socio-economic status, parental influence, and peer pressure on academic decisions.",
                 "Presented findings to school administration to support student guidance programs.",
-                "Presentor of the research project in GENTEFL International Conference 2022 in Da Nang, Vietnam."
+                "Presentor of the research project in GENTEFL International Conference 2023 in Da Nang, Vietnam."
             ],
         },
         {

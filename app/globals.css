@@ -37,6 +37,16 @@ button {
   transition: none !important;
 }
 
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-container {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
 /* Light Mode Overrides */
 html.light-mode {
   --background: #355e50;

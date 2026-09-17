@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Section from "./Section";
+import ScrollReveal from "./ScrollReveal";
 
 export default function ContactUs() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,13 +60,16 @@ export default function ContactUs() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center mb-16 text-center">
-          <span className="bg-primary/10 text-primary border border-primary/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">Contact Me!</span>
-          <p className="text-zinc-400 max-w-lg">Looking to collaborate or just want to say Hi? Feel free to reach out. <br></br>I'd love to hear from you!</p>
-        </div>
+        <ScrollReveal animation="fade-up">
+          <div className="flex flex-col items-center mb-16 text-center">
+            <span className="bg-primary/10 text-primary border border-primary/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">Contact Me!</span>
+            <p className="text-zinc-400 max-w-lg">Looking to collaborate or just want to say Hi? Feel free to reach out. <br></br>I'd love to hear from you!</p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-8 items-stretch">
-          <div className="bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl flex flex-col items-center justify-center text-center group hover:border-primary/30 transition-all duration-500">
+          <ScrollReveal animation="fade-right" className="h-full">
+            <div className="bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl flex flex-col items-center justify-center text-center group hover:border-primary/30 transition-all duration-500 h-full">
             <h3 className="text-xl font-semibold text-white mb-8"></h3>
             <div className="space-y-6 text-left w-full max-w-[280px]">
               <a href="mailto:jessmendozatoledo@gmail.com" className="flex items-center gap-3 text-zinc-300 hover:text-primary transition-colors group/link">
@@ -110,39 +114,42 @@ export default function ContactUs() {
               </div>
             </div>
           </div>
+        </ScrollReveal>
 
-          <div className="bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl hover:border-primary/30 transition-all duration-500">
-            <h3 className="text-xl font-semibold text-white mb-6 text-center">Send a Message</h3>
-            {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+          <ScrollReveal animation="fade-left" delay={150} className="h-full">
+            <div className="bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl hover:border-primary/30 transition-all duration-500 h-full">
+              <h3 className="text-xl font-semibold text-white mb-6 text-center">Send a Message</h3>
+              {submitted ? (
+                <div className="h-full flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-2">Message Sent!</h4>
+                  <p className="text-zinc-400">Thanks for reaching out. I'll get back to you soon.</p>
+                  <button onClick={() => setSubmitted(false)} className="mt-8 text-primary hover:underline font-medium">Send another message</button>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Message Sent!</h4>
-                <p className="text-zinc-400">Thanks for reaching out. I'll get back to you soon.</p>
-                <button onClick={() => setSubmitted(false)} className="mt-8 text-primary hover:underline font-medium">Send another message</button>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-1">Name *</label>
-                  <input type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} placeholder="Full Name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
+              ) : (
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-zinc-400 mb-1">Name *</label>
+                    <input type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} placeholder="Full Name" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-zinc-400 mb-1">Email *</label>
+                    <input type="text" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder="Your Email Address" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-zinc-400 mb-1">Message *</label>
+                    <textarea rows="4" value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} placeholder="Suggestion to improve my website, ideas, job opportunities, or any other message you'd like to share." className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
+                  </div>
+                  {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+                  <button disabled={isSubmitting} onClick={handleSubmit} className="w-full bg-primary text-zinc-950 font-bold py-4 rounded-lg hover:bg-primary/90 disabled:opacity-50 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-primary/20">
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </button>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-1">Email *</label>
-                  <input type="text" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder="Your Email Address" className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-1">Message *</label>
-                  <textarea rows="4" value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} placeholder="Suggestion to improve my website, ideas, job opportunities, or any other message you'd like to share." className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-100 focus:outline-none focus:border-primary/50 transition-colors resize-none"></textarea>
-                </div>
-                {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-                <button disabled={isSubmitting} onClick={handleSubmit} className="w-full bg-primary text-zinc-950 font-bold py-4 rounded-lg hover:bg-primary/90 disabled:opacity-50 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-primary/20">
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </Section>
