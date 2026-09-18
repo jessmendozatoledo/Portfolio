@@ -71,7 +71,7 @@ export const resumeData = {
         {
             title: "Practicality and Appetency: Factors Affecting the Carrer Choices of HUMSS Students in Poblacion Polomolok National High School",
             type: "Practical Research II - Presentor",
-            category: "Academic Project / GENTEFL Presentor -",
+            category: "Academic Project / GENTEFL Presentor",
             location: "Da Nang, Vietnam",
             year: "2019-2023",
             description: [
