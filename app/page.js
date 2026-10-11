@@ -5,6 +5,7 @@ import Experience from "./components/Experience";
 import ContactUs from "./components/ContactMe";
 import Footer from "./components/Footer";
 import Ferrofluid from "./components/Ferrofluid";
+import Chatbot from "./components/Chatbot";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <Experience />
       <ContactUs />
       <Footer />
+      <Chatbot />
     </main>
   );
 }

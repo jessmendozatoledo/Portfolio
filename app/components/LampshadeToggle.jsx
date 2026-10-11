@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import VisitorCounter from "./VisitorCounter";
 
 export default function LampshadeToggle() {
-    const [isLight, setIsLight] = useState(true);
+    const [isLight, setIsLight] = useState(false);
     const [dragY, setDragY] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [startY, setStartY] = useState(0);
@@ -55,8 +55,8 @@ export default function LampshadeToggle() {
     }, [isLight]);
 
     return (
-        <div 
-            className="relative group transition-transform" 
+        <div
+            className="relative group transition-transform"
             title={isLight ? "Pull to toggle light" : "Pull to toggle dark"}
         >
             <VisitorCounter />
@@ -83,7 +83,7 @@ export default function LampshadeToggle() {
                     <ellipse cx="50" cy="116" rx="25" ry="8" fill={isLight ? "#f4f4f5" : "#52525b"} stroke={isLight ? "#d4d4d8" : "#27272a"} strokeWidth="1" />
                     <rect x="47" y="60" width="6" height="58" fill={isLight ? "#f4f4f5" : "#52525b"} />
                     <rect x="47" y="60" width="2" height="58" fill={isLight ? "#ffffff" : "#71717a"} opacity="0.5" />
-                    
+
                     <path
                         d="M20 65C20 65 30 72 50 72C70 72 80 65 80 65"
                         stroke={isLight ? "#fde047" : "#27272a"}
@@ -98,7 +98,7 @@ export default function LampshadeToggle() {
                         strokeWidth="2"
                         className="transition-colors duration-300"
                     />
-                    
+
                     {isLight ? (
                         <>
                             <path d="M35 35C35 35 38 30 42 35" stroke="#18181b" strokeWidth="2.5" strokeLinecap="round" fill="none" />
@@ -115,7 +115,7 @@ export default function LampshadeToggle() {
                     )}
 
                     {/* Pull Rope - True Drag-to-Pull Interaction */}
-                    <g 
+                    <g
                         className={`transition-transform duration-75 ease-out select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
                         style={{ transform: `translateY(${dragY}px)` }}
                         onMouseDown={handleMouseDown}
@@ -126,7 +126,7 @@ export default function LampshadeToggle() {
                     >
                         {/* Invisible larger hit area for easier clicking/grabbing */}
                         <rect x="30" y="65" width="25" height="55" fill="transparent" />
-                        
+
                         <line x1="42" y1="68" x2="42" y2="95" stroke={isLight ? "#f4f4f5" : "#a1a1aa"} strokeWidth="2" />
                         <rect x="40" y="95" width="4" height="10" rx="1" fill={isLight ? "#f4f4f5" : "#71717a"} className="group-hover:fill-primary transition-colors" />
                     </g>

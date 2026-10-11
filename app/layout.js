@@ -26,7 +26,7 @@ import ThemeTransitionHandler from "./components/ThemeTransitionHandler";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="light-mode no-transitions">
+    <html lang="en" className="no-transitions">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
       >
